@@ -16,7 +16,7 @@ class ForumContainer extends React.Component {
         this.props.fetchAlbums()
     }
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         return (
             <div className="forumContainerDiv">
                 <div className="forumDiv"><Posts /></div>
@@ -33,6 +33,7 @@ class ForumContainer extends React.Component {
 function msp(state) {
     return { albums: state.albums }
 }
+
 function mdp(dispatch) {
     return {
         fetchAlbums: () => dispatch(getAlbums())

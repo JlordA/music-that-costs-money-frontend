@@ -8,7 +8,7 @@ const defaultState = {
 function albumsReducer(prevState = defaultState.albums, action){
     switch (action.type) {
         case "GET_ALBUMS":
-            console.log(action.payload)
+            // console.log(action.payload)
             return action.payload
         default:
             return prevState
