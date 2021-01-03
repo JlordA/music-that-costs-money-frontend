@@ -1,13 +1,13 @@
 import React from 'react'
 import { getAlbums } from '../Redux/actions'
 import { connect } from 'react-redux'
-import Forum from '../Components/Forum'
-import CreatePost from '../Components/CreatePost'
-import TopAlbums from '../Components/TopAlbums'
-import Favorties from '../Components/FavoritesList'
-import Scroll from '../Components/Scroll'
+import Posts from '../Components/Forum/Posts'
+import CreatePost from '../Components/Forum/CreatePost'
+import TopAlbums from '../Components/Forum/TopAlbums'
+import Favorties from '../Components/Forum/FavoritesList'
+import Scroll from '../Components/Forum/Scroll'
 
-class MusicContainer extends React.Component {
+class ForumContainer extends React.Component {
 
     componentDidMount() {
         // fetch('http://localhost:3000/api/albums')
@@ -19,7 +19,7 @@ class MusicContainer extends React.Component {
         console.log(this.props)
         return (
             <div className="forumContainerDiv">
-                <div className="forumDiv"><Forum /></div>
+                <div className="forumDiv"><Posts /></div>
                 <div className="createPostDiv"><CreatePost /></div>
                 <div className="topAlbumDiv"><TopAlbums /></div>
                 <div className="favortiesDiv"><Favorties /></div>
@@ -39,4 +39,4 @@ function mdp(dispatch) {
     }
 }
 
-export default connect(msp, mdp)(MusicContainer)
+export default connect(msp, mdp)(ForumContainer)

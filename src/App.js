@@ -1,13 +1,21 @@
 import './App.css';
 import NavBar from './Components/Navbar';
-import MusicContainer from './Containers/musicContainer'
+import Profile from './Containers/ProfileContainer';
+import ForumContainer from './Containers/ForumContainer'
+import LoginForm from './Components/Login';
+import { Route, Switch } from 'react-router-dom'
+
 
 
 function App() {
   return (
     <>
-    <div className="navbarDiv"><NavBar /></div>
-    <MusicContainer />
+      <NavBar />
+      <Switch>
+        <Route path="/login" component={LoginForm} />
+        <Route path="/forum" component={ForumContainer} />
+        <Route path="/profile" component={Profile} />
+      </Switch>
     </>
   );
 }

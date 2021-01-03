@@ -4,17 +4,17 @@ import { NavLink } from 'react-router-dom'
 function NavBar(){
 
     return(
-        <ul>
+        <div className="navbarDiv">
             <NavLink to="/profile">
-                <li>Profile</li>
+                <p>Profile</p>
             </NavLink>
             <NavLink to="/forum">
-                <li>Forum</li>
+                <p>Forum</p>
             </NavLink>
-            <NavLink to="/forum/new">
-                <li>Post 2 Tokai</li>
+            <NavLink to="/login">
+                <p>Logout</p>
             </NavLink>
-        </ul>
+        </div>
     )
 }
 
