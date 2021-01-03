@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,42 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
+
+
+.forumContainerDiv {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  }
+  
+  .navbarDiv { grid-area: 1 / 2 / 3 / 12;
+    background-color: rgb(205, 171, 237);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+
+  .forumDiv { grid-area: 3 / 2 / 9 / 7; 
+    background-color: rgb(138, 142, 150);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+
+  .createPostDiv { grid-area: 9 / 2 / 13 / 7; 
+    background-color: rgb(138, 142, 150);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+
+  .topAlbumDiv { grid-area: 3 / 8 / 9 / 12; 
+    background-color: rgb(138, 142, 150);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  .favortiesDiv { grid-area: 9 / 8 / 13 / 12; 
+    background-color: rgb(138, 142, 150);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  .scrollDiv { grid-area: 3 / 7 / 13 / 8; 
+    background-color: rgb(212, 61, 91);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    text-align: center;
+  }
