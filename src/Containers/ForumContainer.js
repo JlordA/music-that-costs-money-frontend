@@ -10,9 +10,6 @@ import Scroll from '../Components/Forum/Scroll'
 class ForumContainer extends React.Component {
 
     componentDidMount() {
-        // fetch('http://localhost:3000/api/albums')
-        // .then(r => r.json())
-        // .then(console.log)
         this.props.fetchAlbums()
     }
     render() {

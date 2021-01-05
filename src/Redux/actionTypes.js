@@ -1,1 +1,2 @@
 export const GET_ALBUMS = "GET_ALBUMS"
+export const SEARCH_ALBUMS = "SEARCH_ALBUMS"
