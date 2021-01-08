@@ -11,8 +11,8 @@ function App() {
   return (
     <>
       <NavBar />
+      <Route path="/login" component={LoginForm} />
       <Switch>
-        <Route path="/login" component={LoginForm} />
         <Route path="/forum" component={ForumContainer} />
         <Route path="/profile" component={Profile} />
       </Switch>

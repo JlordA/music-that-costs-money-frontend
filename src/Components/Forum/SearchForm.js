@@ -14,7 +14,6 @@ class SearchForm extends React.Component{
     }
 
     render(){
-        console.log(this.state.searchterm)
         return(
             <form>
                 <input type="text" placeholder="Search Albums by Artist" value={this.state.searchterm} onChange={this.onSearch}/>
@@ -32,13 +31,3 @@ function mdp(dispatch) {
 
 export default connect(null, mdp)(SearchForm)
 
-
-// function SearchForm(props){
-   
-//     return(
-//         <form>
-//             <input type="text" placeholder="Search Albums by Artist" value={props.searchterm} onChange={props.onSearch}/>
-//         </form>
-//     )
-
-// }

@@ -1,2 +1,4 @@
 export const GET_ALBUMS = "GET_ALBUMS"
-export const SEARCH_ALBUMS = "SEARCH_ALBUMS"
+export const FORMATTED_SEARCH = "FORMATTED_SEARCH"
+export const ADD_FAVORITE = "ADD_FAVORITE"
+export const POST_ALBUM = "POST_ALBUM"

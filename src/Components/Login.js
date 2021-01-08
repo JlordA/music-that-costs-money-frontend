@@ -1,4 +1,5 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
 class LoginForm extends React.Component{
 
@@ -13,4 +14,4 @@ class LoginForm extends React.Component{
     }
 }
 
-export default LoginForm
+export default connect()(LoginForm)

@@ -5,7 +5,7 @@ function NavBar(){
 
     return(
         <div className="navbarDiv">
-            <NavLink to="/profile">Profile</NavLink>  <NavLink to="/forum">Forum</NavLink>  <NavLink to="/login">Logout</NavLink>
+            <NavLink to="/profile">Profile</NavLink>      <NavLink to="/forum">Forum</NavLink>      <NavLink to="/login">Logout</NavLink>
         </div>
     )
 }

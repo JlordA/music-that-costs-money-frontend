@@ -28,7 +28,10 @@ class ForumContainer extends React.Component {
 }
 
 function msp(state) {
-    return { albums: state.albums }
+    return { 
+        albums: state.albums,
+        searchresults: state.searchresults
+    }
 }
 
 function mdp(dispatch) {
