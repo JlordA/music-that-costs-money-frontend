@@ -1,4 +1,4 @@
-import { GET_ALBUMS, FORMATTED_SEARCH, ADD_FAVORITE } from './actionTypes'
+import { GET_ALBUMS, FORMATTED_SEARCH, ADD_FAVORITE, POST_ALBUM } from './actionTypes'
 
 
 export function getAlbums() {
@@ -36,24 +36,25 @@ export function searchAlbums(e) {
     }
 }
 
-export function postAlbum(AlbumObject){
-    console.log(AlbumObject)
+export function postAlbum(albumObj){
     return function (dispatch){
         fetch('http://localhost:3000/api/albums',{
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify(AlbumObject),
+            body: JSON.stringify(albumObj),
           })
           .then(response => response.json())
-          .then(data => {
-            console.log('Success:', data);
-          })
-    }
+          .then(newAlbumObject => {
+            console.log(newAlbumObject) 
+            dispatch ({ type: POST_ALBUM, payload: newAlbumObject })
+        })
+        }
 }
 
-export function addAlbumToFavorites(){
-    return { type: ADD_FAVORITE }
+export function addAlbumToFavorites(albumObj){
+    return { type: ADD_FAVORITE, payload: albumObj }
 }
 
+// 

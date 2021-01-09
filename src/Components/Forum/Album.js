@@ -6,22 +6,19 @@ import { postAlbum } from '../../Redux/actions'
 class Album extends React.Component {
 
 
-    addToFavortie = () => {
-        console.log("object from search fetch: ", this.props.AlbumObject)
-        this.props.albums.map(albumEl => {
-            if (albumEl.title === this.props.AlbumObject.title) {
-                this.props.favorite(this.props.AlbumObject)
-            } else {
-                this.props.addAlbum(this.props.AlbumObject)
-            }
-        })
+    addToFavorite = () => {
+        if (this.props.albums.includes(this.props.AlbumObject)) {
+            this.props.favorite(this.props.AlbumObject)
+        } else {
+            this.props.addAlbum(this.props.AlbumObject)
+        }
     }
 
-    render(){
-            return(
+    render() {
+        return (
             <>
-                <p>Artist: {this.props.AlbumObject.artist} Title: {this.props.AlbumObject.title} Wants: 
-                {this.props.AlbumObject.wants}<button onClick={this.addToFavortie}>  ❤️  </button></p>
+                <p>Artist: {this.props.AlbumObject.artist} Title: {this.props.AlbumObject.title} Wants:
+                {this.props.AlbumObject.wants}<button onClick={this.addToFavorite}>  ❤️  </button></p>
             </>
         )
     }
@@ -29,14 +26,15 @@ class Album extends React.Component {
 
 function msp(state) {
     return {
-        albums: state.albums
+        albums: state.albums,
+        searchresults: state.searchresults
     }
 }
 
 function mdp(dispatch) {
-    return { 
-        favorite: () => dispatch(addAlbumToFavorites()),
-        addAlbum: () => dispatch(postAlbum()) 
+    return {
+        favorite: (albumObj) => dispatch(addAlbumToFavorites(albumObj)),
+        addAlbum: (albumObj) => dispatch(postAlbum(albumObj))
     }
 }
 

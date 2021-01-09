@@ -31,7 +31,7 @@ class TopAlbums extends React.Component {
     // }
 
     render() {
-        console.log(this.props.searchresults)
+        // console.log(this.props.searchresults)
         return (
             <>
                 <h1>Top 5 Albums</h1>

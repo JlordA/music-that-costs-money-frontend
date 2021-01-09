@@ -13,8 +13,8 @@ function albumsReducer(prevState = defaultState.albums, action) {
             // console.log(action.payload)
             return action.payload
         case "POST_ALBUM":
-            console.log(action.payload)
-            return action.payload
+            console.log("In API Reducer: ", action)
+            return [...prevState, action.payload]
         default:
             return prevState
     }
