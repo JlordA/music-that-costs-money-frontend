@@ -1,5 +1,6 @@
-import { GET_ALBUMS, FORMATTED_SEARCH, ADD_FAVORITE, POST_ALBUM } from './actionTypes'
+import { GET_ALBUMS, FORMATTED_SEARCH, ADD_FAVORITE, POST_ALBUM, LOGIN_USER, CREATE_POST } from './actionTypes'
 
+////// ALBUM ACTIONS //////
 
 export function getAlbums() {
     return function (dispatch) {
@@ -20,8 +21,6 @@ export function formattedSearch(filteredArrayOfAlbums, dispatch) {
     })
     
     { dispatch({ type: FORMATTED_SEARCH, payload: searchresults }) }
-    
-
 }
 
 export function searchAlbums(e) {
@@ -53,8 +52,63 @@ export function postAlbum(albumObj){
         }
 }
 
+///// POST ACTIONS /////
+export function createPost(postObj){
+    console.log(postObj)
+    return function (dispatch){
+        fetch('http://localhost:3000/api/posts',{
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(postObj),
+          })
+          .then(response => response.json())
+          .then(newPostObject => {
+            console.log(newPostObject) 
+            dispatch ({ type: CREATE_POST, payload: newPostObject })
+        })
+        }
+} 
+
+//// FAVORITE ACTIONS /////
 export function addAlbumToFavorites(albumObj){
     return { type: ADD_FAVORITE, payload: albumObj }
 }
 
-// 
+
+///// USER ACTIONS //////
+
+export function loginUser(userObj){
+    return function (dispatch){
+        fetch('http://localhost:3000/api/login',{
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userObj),
+          })
+          .then(response => response.json())
+          .then(newUser => {
+            console.log(newUser)
+            dispatch ({ type: LOGIN_USER, payload: newUser})
+          })
+        }
+}
+
+export function createUser(userObj){
+    return function (dispatch){
+        fetch('http://localhost:3000/api/user',{
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userObj),
+          })
+          .then(response => response.json())
+          .then(newUser => {
+            console.log(newUser)
+            dispatch ({ type: LOGIN_USER, payload: newUser})
+          })
+    }
+}
